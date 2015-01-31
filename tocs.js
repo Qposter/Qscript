@@ -4,7 +4,7 @@
  */
 var tocConfig = {
     url: "",
-    feedNum: 16,
+    feedNum: 20,
     labelName: (window.location.hash && window.location.hash != "#0" && window.location.hash != "#search") ? encodeURIComponent(window.location.hash.substr(1)) : false,
     numChars: 140,
     thumbWidth: 70,
@@ -44,9 +44,9 @@ function showLabels(c) {
     var a = c.feed.category,
         d = "";
     d = "<select id='labelSorter' onchange='changeSort(this.value);'>";
-    d += "<option value='' selected>Category...</option>";
+    d += "<option value='' selected>CATEGORY...</option>";
     for (var b = 0; b < a.length; b++) {
-        d += "<option value='" + decodeURIComponent(a[b].term) + "'>" + a[b].term.tocapitalize() + "</option>"
+        d += "<option value='" + decodeURIComponent(a[b].term) + "'>" + a[b].term.toUpperCase() + "</option>"
     }
     d += "</select>";
     labelSorter.innerHTML = d
